@@ -10,7 +10,7 @@
 
 <div class="container" id="content">
   <h1>mySO - Stock Opname</h1>
-  <h2 id="currentDate"></h2>
+  <h2 id="todayDate"></h2>
 
   <div class="input-group">
     <label for="userName">User:</label>
@@ -33,18 +33,20 @@
 
   <button id="addItemBtn">➕ Tambah Item</button>
 
-  <table id="itemTable">
-    <thead>
-      <tr>
-        <th style="width: 30%;">Nama Item</th>
-        <th style="width: 15%;">Stock Candice</th>
-        <th style="width: 15%;">Stock Asli</th>
-        <th style="width: 20%;">Foto</th>
-        <th style="width: 20%;">Aksi</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+  <div class="table-container">
+    <table id="itemTable">
+      <thead>
+        <tr>
+          <th style="width: 30%;">Nama Item</th>
+          <th style="width: 10%;">Stock Candice</th>
+          <th style="width: 10%;">Stock Asli</th>
+          <th style="width: 30%;">Foto</th>
+          <th style="width: 20%;">Aksi</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
 
   <button id="downloadPDFBtn">📄 Download PDF</button>
 </div>
