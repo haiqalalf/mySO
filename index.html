@@ -1,39 +1,38 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mySO - Stock Opname</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
-    <div class="container" id="contentToDownload">
+    <div class="container" id="content">
         <h1>mySO - Stock Opname</h1>
 
-        <div class="form-group">
-            <label for="userInput"><strong>User:</strong></label>
-            <input type="text" id="userInput" placeholder="Nama User">
-            <button id="setUserBtn">✅ Set Nama User</button>
+        <div class="date-picker">
+            <select id="day"></select>
+            <select id="month"></select>
+            <select id="year"></select>
         </div>
 
-        <div class="form-group">
-            <label for="branchInput"><strong>Cabang:</strong></label>
-            <input type="text" id="branchInput" placeholder="Nama Cabang">
-            <button id="setBranchBtn">✅ Set Nama Cabang</button>
+        <div class="input-group">
+            <label for="user">User:</label>
+            <input type="text" id="user" placeholder="Nama User">
+            <button id="setUser">✅ Set Nama User</button>
         </div>
 
-        <div class="form-group small-inputs">
-            <label><strong>Tanggal:</strong></label><br>
-            <select id="daySelect"></select>
-            <select id="monthSelect"></select>
-            <select id="yearSelect"></select>
+        <div class="input-group">
+            <label for="branch">Cabang:</label>
+            <input type="text" id="branch" placeholder="Nama Cabang">
+            <button id="setBranch">✅ Set Nama Cabang</button>
         </div>
 
-        <div class="form-group">
-            <button id="addItemBtn">➕ Tambah Item</button>
+        <div class="button-group">
+            <button id="addItem">➕ Tambah Item</button>
         </div>
 
-        <table id="itemTable">
+        <table id="stockTable">
             <thead>
                 <tr>
                     <th>Nama Item</th>
@@ -44,16 +43,14 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Data akan masuk di sini -->
             </tbody>
         </table>
 
-        <div class="form-group">
-            <button id="downloadPDFBtn">📄 Download PDF</button>
+        <div class="button-group">
+            <button id="downloadPDF">⬇️ Download PDF</button>
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
