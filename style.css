@@ -1,16 +1,23 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #e6f0ff;
+    background-color: #e8f0fe;
     margin: 0;
-    padding: 0;
+    padding: 20px;
 }
 
 .container {
-    background: white;
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 20px;
-    border-radius: 10px;
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
 }
 
 h1 {
@@ -18,69 +25,110 @@ h1 {
     color: #007bff;
 }
 
-.form-group {
-    margin-bottom: 15px;
+.input-group, .button-group, .date-picker {
+    margin-bottom: 20px;
     text-align: center;
 }
 
-input[type="text"],
-input[type="number"],
-input[type="file"],
-select {
+.input-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
     width: 90%;
-    padding: 8px;
-    margin-top: 5px;
+    padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #007bff;
-    border-radius: 5px;
+    border: 2px solid #007bff;
+    border-radius: 8px;
 }
 
 button {
     background-color: #007bff;
     color: white;
+    padding: 10px 20px;
+    margin-top: 5px;
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
 }
 
 button:hover {
     background-color: #0056b3;
 }
 
-#itemTable {
+table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
-#itemTable th, #itemTable td {
-    border: 1px solid #007bff;
+th, td {
+    border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
 }
 
-#itemTable th {
+th {
     background-color: #007bff;
     color: white;
 }
 
-/* khusus select tanggal */
-.small-inputs select {
-    width: 30%;
-    display: inline-block;
+/* Setting lebar kolom */
+th:nth-child(1), td:nth-child(1) { width: 35%; }
+th:nth-child(2), td:nth-child(2) { width: 10%; }
+th:nth-child(3), td:nth-child(3) { width: 10%; }
+th:nth-child(4), td:nth-child(4) { width: 25%; }
+th:nth-child(5), td:nth-child(5) { width: 20%; }
+
+img {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 10px;
 }
 
+/* Responsive tampilan HP */
 @media (max-width: 600px) {
-    .container {
-        width: 95%;
-        padding: 10px;
+    table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
     }
 
-    input[type="text"],
-    input[type="number"],
-    input[type="file"],
-    select {
+    thead {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 15px;
+        background: #f9f9f9;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        animation: fadeIn 0.5s ease;
+    }
+
+    td {
+        text-align: left;
+        padding: 10px;
+        position: relative;
+        border: none;
+        border-bottom: 1px solid #ccc;
+    }
+
+    td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    td input, td button {
+        margin-top: 5px;
         width: 100%;
     }
 }
