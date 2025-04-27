@@ -1,49 +1,58 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>mySO - Stock Opname</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mySO - Stock Opname</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container" id="captureArea">
-    <h1>mySO - Stock Opname</h1>
+    <div class="container">
+        <h1>mySO - Stock Opname</h1>
 
-    <div class="header-info">
-      <p id="tanggal"></p>
-      <p id="namaCabangDisplay"></p>
+        <div class="date-picker">
+            <select id="day"></select>
+            <select id="month"></select>
+            <select id="year"></select>
+        </div>
+
+        <div class="input-group">
+            <label for="userInput">User:</label>
+            <input type="text" id="userInput" placeholder="Nama User">
+            <button id="setUserBtn">✅ Set Nama User</button>
+        </div>
+
+        <div class="input-group">
+            <label for="branchInput">Cabang:</label>
+            <input type="text" id="branchInput" placeholder="Nama Cabang">
+            <button id="setBranchBtn">✅ Set Nama Cabang</button>
+        </div>
+
+        <div class="button-group">
+            <button id="addItemBtn">➕ Tambah Item</button>
+        </div>
+
+        <table id="stockTable">
+            <thead>
+                <tr>
+                    <th>Nama Item</th>
+                    <th>Stock Candice</th>
+                    <th>Stock Asli</th>
+                    <th>Foto</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Isi data item di sini -->
+            </tbody>
+        </table>
+
+        <div class="button-group">
+            <button id="downloadBtn">⬇️ Download PDF</button>
+        </div>
     </div>
 
-    <div class="form-group">
-      <label for="cabang">Cabang:</label>
-      <input type="text" id="cabang" placeholder="Nama Cabang">
-      <button id="setCabangBtn">✅ Set Nama Cabang</button>
-    </div>
-
-    <button id="addItemBtn">➕ Tambah Item</button>
-
-    <div class="table-container">
-      <table id="itemsTable">
-        <thead>
-          <tr>
-            <th>Nama Item</th>
-            <th>Stock Candice</th>
-            <th>Stock Asli</th>
-            <th>Foto</th>
-            <th>Aksi</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-    </div>
-
-    <button id="downloadBtn">⬇️ Download PDF</button>
-  </div>
-
-  <!-- Library html2pdf -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
-  <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
