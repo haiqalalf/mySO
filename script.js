@@ -43,6 +43,19 @@ addItemBtn.addEventListener('click', () => {
     aksiCell.innerHTML = '<button onclick="hapusBaris(this)">🗑️ Hapus</button>';
 });
 
+// Preview gambar di tabel
+function previewImage(event, input) {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const previewDiv = input.nextElementSibling;
+      previewDiv.innerHTML = `<img src="${e.target.result}" alt="Preview">`;
+    };
+    reader.readAsDataURL(file);
+  }
+}
+
 // Hapus baris
 function hapusBaris(btn) {
     const row = btn.parentNode.parentNode;
@@ -77,8 +90,8 @@ downloadPDFBtn.addEventListener('click', () => {
         margin:       [10, 10, 10, 10],
         filename:     'stock-opname.pdf',
         image:        { type: 'jpeg', quality: 1 },
-        html2canvas:  { scale: 3, backgroundColor: '#ffffff' },
-        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'landscape' }
+        html2canvas:  { scale: 3 },
+        jsPDF:        { unit: 'in', format: 'a4', orientation: 'landscape' }
     };
-    html2pdf().set(opt).from(element).save();
+    html2pdf().from(captureArea).set(opt).from(element).save();
 });
