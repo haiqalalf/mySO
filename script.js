@@ -72,11 +72,13 @@ populateDateSelectors();
 
 // Download PDF (landscape)
 downloadPDFBtn.addEventListener('click', () => {
-    const element = document.getElementById('content');
-    html2pdf().from(element).set({
-        margin: 10,
-        filename: 'stock-opname.pdf',
-        html2canvas: { scale: 2 },
-        jsPDF: { orientation: 'landscape', unit: 'mm', format: 'a4' }
-    }).save();
+    const element = document.querySelector('.container');
+    const opt = {
+        margin:       [10, 10, 10, 10],
+        filename:     'stock-opname.pdf',
+        image:        { type: 'jpeg', quality: 1 },
+        html2canvas:  { scale: 3, backgroundColor: '#ffffff' },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'landscape' }
+    };
+    html2pdf().set(opt).from(element).save();
 });
