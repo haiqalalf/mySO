@@ -1,134 +1,114 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #e8f0fe;
-    margin: 0;
-    padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #eaf2ff;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-    max-width: 900px;
-    margin: auto;
-    background: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    animation: fadeIn 0.8s ease-in-out;
+  max-width: 900px;
+  margin: 30px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px);}
-    to { opacity: 1; transform: translateY(0);}
+h1, h2 {
+  text-align: center;
+  color: #007bff;
 }
 
-h1 {
-    text-align: center;
-    color: #007bff;
+.input-group {
+  margin: 15px 0;
 }
 
-.input-group, .button-group, .date-picker {
-    margin-bottom: 20px;
-    text-align: center;
+label {
+  font-weight: bold;
 }
 
-.input-group label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-}
-
-input[type="text"] {
-    width: 90%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 2px solid #007bff;
-    border-radius: 8px;
+input[type="text"], select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
 }
 
 button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    margin-top: 5px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 5px;
 }
 
 button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
+}
+
+.table-container {
+  overflow-x: auto;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
 }
 
 th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
+  border: 1px solid #007bff;
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle;
 }
 
 th {
-    background-color: #007bff;
-    color: white;
+  background-color: #007bff;
+  color: white;
 }
-
-/* Setting lebar kolom */
-th:nth-child(1), td:nth-child(1) { width: 35%; }
-th:nth-child(2), td:nth-child(2) { width: 10%; }
-th:nth-child(3), td:nth-child(3) { width: 10%; }
-th:nth-child(4), td:nth-child(4) { width: 25%; }
-th:nth-child(5), td:nth-child(5) { width: 20%; }
 
 img {
-    max-width: 100px;
-    max-height: 100px;
-    border-radius: 10px;
+  width: 100px;
+  height: auto;
 }
 
-/* Responsive tampilan HP */
+/* Tambahan supaya responsive */
 @media (max-width: 600px) {
-    table, thead, tbody, th, td, tr {
-        display: block;
-        width: 100%;
-    }
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
 
-    thead {
-        display: none;
-    }
+  thead {
+    display: none;
+  }
 
-    tr {
-        margin-bottom: 15px;
-        background: #f9f9f9;
-        border-radius: 10px;
-        padding: 10px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        animation: fadeIn 0.5s ease;
-    }
+  td {
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
 
-    td {
-        text-align: left;
-        padding: 10px;
-        position: relative;
-        border: none;
-        border-bottom: 1px solid #ccc;
-    }
+  td::before {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+    color: #007bff;
+  }
 
-    td:before {
-        content: attr(data-label);
-        position: absolute;
-        left: 10px;
-        top: 10px;
-        font-weight: bold;
-        color: #333;
-    }
-
-    td input, td button {
-        margin-top: 5px;
-        width: 100%;
-    }
+  td:nth-child(1)::before { content: "Nama Item"; }
+  td:nth-child(2)::before { content: "Stock Candice"; }
+  td:nth-child(3)::before { content: "Stock Asli"; }
+  td:nth-child(4)::before { content: "Foto"; }
+  td:nth-child(5)::before { content: "Aksi"; }
 }
