@@ -1,56 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>mySO - Stock Opname</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mySO - Stock Opname</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container" id="content">
-        <h1>mySO - Stock Opname</h1>
 
-        <div class="date-picker">
-            <select id="day"></select>
-            <select id="month"></select>
-            <select id="year"></select>
-        </div>
+<div class="container" id="content">
+  <h1>mySO - Stock Opname</h1>
+  <h2 id="currentDate"></h2>
 
-        <div class="input-group">
-            <label for="user">User:</label>
-            <input type="text" id="user" placeholder="Nama User">
-            <button id="setUser">✅ Set Nama User</button>
-        </div>
+  <div class="input-group">
+    <label for="userName">User:</label>
+    <input type="text" id="userName" placeholder="Nama User">
+    <button id="setUserBtn">✅ Set Nama User</button>
+  </div>
 
-        <div class="input-group">
-            <label for="branch">Cabang:</label>
-            <input type="text" id="branch" placeholder="Nama Cabang">
-            <button id="setBranch">✅ Set Nama Cabang</button>
-        </div>
+  <div class="input-group">
+    <label for="branchName">Cabang:</label>
+    <input type="text" id="branchName" placeholder="Nama Cabang">
+    <button id="setBranchBtn">✅ Set Nama Cabang</button>
+  </div>
 
-        <div class="button-group">
-            <button id="addItem">➕ Tambah Item</button>
-        </div>
+  <div class="input-group">
+    <label for="day">Tanggal:</label>
+    <select id="day"></select>
+    <select id="month"></select>
+    <select id="year"></select>
+  </div>
 
-        <table id="stockTable">
-            <thead>
-                <tr>
-                    <th>Nama Item</th>
-                    <th>Stock Candice</th>
-                    <th>Stock Asli</th>
-                    <th>Foto</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+  <button id="addItemBtn">➕ Tambah Item</button>
 
-        <div class="button-group">
-            <button id="downloadPDF">⬇️ Download PDF</button>
-        </div>
-    </div>
+  <table id="itemTable">
+    <thead>
+      <tr>
+        <th style="width: 30%;">Nama Item</th>
+        <th style="width: 15%;">Stock Candice</th>
+        <th style="width: 15%;">Stock Asli</th>
+        <th style="width: 20%;">Foto</th>
+        <th style="width: 20%;">Aksi</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
 
-    <script src="script.js"></script>
+  <button id="downloadPDFBtn">📄 Download PDF</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
